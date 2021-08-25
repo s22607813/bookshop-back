@@ -20,7 +20,7 @@ app.use(cors({
     if (process.env.DEV === 'true') {
       callback(null, true)
     } else {
-      if (origin !== undefined && origin.includes('github')) {
+      if (origin === undefined || origin.includes('github')) {
         callback(null, true)
       } else {
         callback(new Error('Not allowed'), false)
